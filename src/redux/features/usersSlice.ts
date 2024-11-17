@@ -32,4 +32,4 @@ const usersSlice = createSlice({
 
 export const { setUsers } = usersSlice.actions;
 
-export default usersSlice.reducer; // Aquí exportamos el reducer correctamente
+export default usersSlice.reducer; 

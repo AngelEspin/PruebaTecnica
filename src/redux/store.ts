@@ -1,6 +1,6 @@
 // store.ts
 import { configureStore } from '@reduxjs/toolkit';
-import usersReducer from './features/usersSlice'; // Asegúrate de que la ruta sea correcta
+import usersReducer from './features/usersSlice'; 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 
@@ -42,7 +42,7 @@ const usersSlice = createSlice({
 
 export const { setUsers } = usersSlice.actions;
 
-export default usersSlice; // Asegúrate de tener esta línea
+export default usersSlice; 
 
 // Esto permite que el store sea utilizado en toda la aplicación
 export type RootState = ReturnType<typeof store.getState>;

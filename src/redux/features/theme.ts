@@ -6,13 +6,13 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Color principal (puedes cambiarlo)
+      main: '#1976d2', // Color principal 
     },
     secondary: {
-      main: '#dc004e', // Color secundario (puedes cambiarlo)
+      main: '#dc004e', // Color secundario 
     },
   },
   typography: {
-    fontFamily: 'Arial, sans-serif', // Configura tu tipografía
+    fontFamily: 'Arial, sans-serif', 
   },
 });
