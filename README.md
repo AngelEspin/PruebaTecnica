@@ -34,6 +34,3 @@ Clona tu fork y haz tus cambios.
 Abre un Pull Request con tus cambios. 
 ## Licencia
 Este proyecto está bajo la Licencia MIT.
-
-r
-Copiar código
