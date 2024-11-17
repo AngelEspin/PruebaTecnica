@@ -11,32 +11,16 @@ import * as XLSX from 'xlsx';  // Usamos SheetJS para exportar a Excel
 import { jsPDF } from 'jspdf';  // Importamos jsPDF para la creación de PDFs
 import 'jspdf-autotable';  // Importamos el plugin jsPDF AutoTable para manejar tablas en PDFs
 import { UserOptions } from 'jspdf-autotable';
+import theme from '../redux/features/theme';  // Importa el archivo de configuración del tema
+
 
 // Definimos una extensión para jsPDF que incluya autoTable
 interface jsPDFCustom extends jsPDF {
   autoTable: (options: UserOptions) => void;
 }
 
-// Importamos ThemeProvider y createTheme de Material-UI para personalizar el tema
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider} from '@mui/material/styles';
 
-// Creamos un tema personalizado para la aplicación
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2', // Color principal del tema
-    },
-    secondary: {
-      main: '#dc004e', // Color secundario del tema
-    },
-    background: {
-      default: '#f4f6f8', // Fondo predeterminado más claro
-    },
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif', // Fuente principal
-  },
-});
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -104,6 +88,7 @@ const Page = () => {
             fullWidth
             onChange={(e) => setSearch(e.target.value)}  // Actualizamos el estado de búsqueda
             margin="normal"
+            
           />
 
           {/* Botones para exportar a Excel y PDF */}

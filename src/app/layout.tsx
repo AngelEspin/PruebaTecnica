@@ -5,6 +5,9 @@
 import { Provider } from 'react-redux';
 import { store } from '../redux/store'; 
 import { ReactNode } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../redux/features/theme'; 
+import { CssBaseline } from '@mui/material';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -20,7 +23,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         <body>
           
           <Provider store={store}>
-            {children}
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              {children}
+            </ThemeProvider>
           </Provider>
         </body>
       </html>
