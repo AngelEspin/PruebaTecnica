@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from '../redux/store'; 
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../redux/features/theme'; 
+import theme from '../mui/theme'; 
 import { CssBaseline } from '@mui/material';
 
 export default function Layout({ children }: { children: ReactNode }) {
