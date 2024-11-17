@@ -27,7 +27,7 @@ const Page = () => {
 
   return (
     <Box sx={{ padding: 3 }}>
-      <Typography variant="h3" gutterBottom  color="secondary">
+      <Typography variant="h3" gutterBottom  color="primary">
         Lista de Usuarios
       </Typography>
       <Grid container spacing={2} alignItems="center">
