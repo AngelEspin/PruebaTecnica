@@ -39,9 +39,12 @@ export interface UserComplete {
 }
 // Interfaz de 'User' que representa la estructura de datos básicos de un usuario
 export interface User {
-id: number;
-name: string;
-email: string;
-phone: string;
-company: { name: string };
+  id: number;
+  name: string;
+  username: string;  // Asegúrate de incluir estas propiedades
+  email: string;
+  phone: string;
+  website: string;
+  address: Address;
+  company: Company;
 }

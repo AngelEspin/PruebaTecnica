@@ -3,7 +3,7 @@
 import { configureStore } from '@reduxjs/toolkit';  
 import usersReducer from './features/usersSlice';  
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';  
-import { UserComplete, User } from './components/types';
+import { UserComplete, User } from '../redux/components/types';
 
 
 // Configuración del store con el reducer de usuarios

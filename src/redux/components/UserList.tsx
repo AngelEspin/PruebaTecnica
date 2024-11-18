@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useUserModal } from '../hooks'; // Importa el hook personalizado para manejar el modal
-import { User } from './types'; // Importa el tipo User desde 'types.ts'
+import { User, UserComplete } from './types'; // Importa el tipo User desde 'types.ts'
 
 const modalStyle = {
   position: 'absolute' as 'absolute', // Establece la posición del modal
@@ -27,7 +27,7 @@ const modalStyle = {
   borderRadius: 2, // Bordes redondeados
 };
 
-const UserList: React.FC<{ users: User[] }> = ({ users }) => {
+const UserList: React.FC<{ users: UserComplete[] }> = ({ users }) => {
   const { selectedUser, isModalOpen, openModal, closeModal } = useUserModal(); // Usar el hook para gestionar el estado del modal
 
   if (users.length === 0) {
