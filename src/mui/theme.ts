@@ -10,7 +10,7 @@ const theme = createTheme({
       main: '#000000', // Color secundario
     },
     background: {
-      default: '#e6f4ff', // Fondo por defecto
+      default: '#f4f4f4', // Fondo por defecto
       paper: '#ffffff', // Fondo blanco para los papeles
     },
   },
