@@ -28,7 +28,7 @@ export interface User {
 
 // Interfaz para el estado de los usuarios
 interface UsersState {
-  users: User[];  
+  users: User[];  // Arreglo de usuarios
 }
 
 // Estado inicial del slice de usuarios
@@ -39,7 +39,7 @@ const initialState: UsersState = {
 // Definición del slice para manejar los usuarios
 const usersSlice = createSlice({
   name: 'users',  // Nombre del slice
-  initialState,  
+  initialState,  // Estado inicial
   reducers: {
     // Acción para establecer los usuarios en el estado
     setUsers: (state, action: PayloadAction<User[]>) => {
