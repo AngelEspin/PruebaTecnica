@@ -1,9 +1,10 @@
-// Este código configura el store de Redux para gestionar el estado de los usuarios en la aplicación.
+// Este archivo configura el store de Redux para gestionar el estado de los usuarios
 
-//Importación para utilizar las herramientas de Redux Toolkit
 import { configureStore } from '@reduxjs/toolkit';  
 import usersReducer from './features/usersSlice';  
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';  
+import { UserComplete, User } from './components/types';
+
 
 // Configuración del store con el reducer de usuarios
 export const store = configureStore({
@@ -12,28 +13,18 @@ export const store = configureStore({
   },
 });
 
-// Definición del tipo 'Company' para la propiedad 'company' en 'User'
-interface Company {
-  name: string;
-}
 
-// Interfaz de 'User' que representa la estructura de datos de un usuario
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  company: Company;
-}
 
 // Interfaz para el estado de los usuarios
 interface UsersState {
-  users: User[];  // Arreglo de usuarios
+  users: User[];  // Arreglo de usuarios con datos básicos
+  completeUsers: UserComplete[];  // Arreglo con usuarios completos, incluyendo información adicional
 }
 
 // Estado inicial del slice de usuarios
 const initialState: UsersState = {
-  users: [],  // Inicialmente no hay usuarios
+  users: [],  // Inicialmente no hay usuarios con datos básicos
+  completeUsers: [],  // Inicialmente no hay usuarios con información adicional
 };
 
 // Definición del slice para manejar los usuarios
@@ -41,19 +32,24 @@ const usersSlice = createSlice({
   name: 'users',  // Nombre del slice
   initialState,  // Estado inicial
   reducers: {
-    // Acción para establecer los usuarios en el estado
+    // Acción para establecer los usuarios con datos básicos en el estado
     setUsers: (state, action: PayloadAction<User[]>) => {
-      state.users = action.payload;  // Actualiza el estado con el payload
+      state.users = action.payload;  // Actualiza el estado con los usuarios básicos
+    },
+    // Acción para establecer los usuarios con información completa
+    setCompleteUsers: (state, action: PayloadAction<UserComplete[]>) => {
+      state.completeUsers = action.payload;  // Actualiza el estado con los usuarios completos
     },
   },
 });
 
-// Exporta la acción 'setUsers' para ser usada en otros archivos
-export const { setUsers } = usersSlice.actions;
+// Exporta las acciones para ser usadas en otros archivos
+export const { setUsers, setCompleteUsers } = usersSlice.actions;
 
 // Exporta el slice completo para ser usado en la configuración del store
-export default usersSlice;
+export default usersSlice.reducer;
 
 // Exporta tipos derivados del store para ser utilizados en toda la aplicación
+
 export type RootState = ReturnType<typeof store.getState>;  // Tipo para acceder al estado
 export type AppDispatch = typeof store.dispatch;  // Tipo para despachar acciones

@@ -1,5 +1,3 @@
-// Mostrar lista de usuarios implementando  React, Material-UI para el diseño de la interfaz y un custom hook para manejar el estado del modal 
-// y la información del usuario seleccionado.
 import React from 'react';
 import {
   Table,
@@ -14,8 +12,8 @@ import {
   Box,
   Typography,
 } from '@mui/material';
-import { useUserModal } from '../redux/hooks'; // Importa el hook personalizado para manejar el modal
-import { User } from '../components/types'; // Importa el tipo User desde 'types.ts'
+import { useUserModal } from '../hooks'; // Importa el hook personalizado para manejar el modal
+import { User } from './types'; // Importa el tipo User desde 'types.ts'
 
 const modalStyle = {
   position: 'absolute' as 'absolute', // Establece la posición del modal
@@ -87,12 +85,12 @@ const UserList: React.FC<{ users: User[] }> = ({ users }) => {
                 Dirección
               </Typography>
               <Typography>
-                {selectedUser.address.street}, {selectedUser.address.suite}, {selectedUser.address.city} -{' '}
-                {selectedUser.address.zipcode}
+                {selectedUser.address?.street}, {selectedUser.address?.suite}, {selectedUser.address?.city} -{' '}
+                {selectedUser.address?.zipcode}
               </Typography>
               <Typography>
-                <strong>Coordenadas:</strong> Latitud: {selectedUser.address.geo.lat}, Longitud:{' '}
-                {selectedUser.address.geo.lng}
+                <strong>Coordenadas:</strong> Latitud: {selectedUser.address?.geo.lat}, Longitud:{' '}
+                {selectedUser.address?.geo.lng}
               </Typography>
 
               <Typography variant="h6" component="h3" gutterBottom sx={{ mt: 2 }}>

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TextField, Button, Box, Grid, Typography } from '@mui/material';
 import { setUsers } from '../redux/features/usersSlice';
 import { RootState } from '../redux/store';
-import UserList from '../components/UserList';
+import UserList from '../redux/components/UserList';
 import { exportToPDF, exportToExcel } from '../utils/exportData';
 
 // Componente principal que muestra una lista de usuarios y permite filtrar y exportar los datos.
