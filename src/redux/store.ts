@@ -2,7 +2,6 @@
 
 import { configureStore } from '@reduxjs/toolkit';  
 import usersReducer from './features/usersSlice';  
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';  
 import { UserComplete, User } from '../redux/components/types';
 
 
@@ -12,8 +11,6 @@ export const store = configureStore({
     users: usersReducer,  // Reducer para manejar el estado de los usuarios
   },
 });
-
-
 
 // Interfaz para el estado de los usuarios
 interface UsersState {
