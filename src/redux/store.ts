@@ -27,27 +27,7 @@ const initialState: UsersState = {
   completeUsers: [],  // Inicialmente no hay usuarios con información adicional
 };
 
-// Definición del slice para manejar los usuarios
-const usersSlice = createSlice({
-  name: 'users',  // Nombre del slice
-  initialState,  // Estado inicial
-  reducers: {
-    // Acción para establecer los usuarios con datos básicos en el estado
-    setUsers: (state, action: PayloadAction<User[]>) => {
-      state.users = action.payload;  // Actualiza el estado con los usuarios básicos
-    },
-    // Acción para establecer los usuarios con información completa
-    setCompleteUsers: (state, action: PayloadAction<UserComplete[]>) => {
-      state.completeUsers = action.payload;  // Actualiza el estado con los usuarios completos
-    },
-  },
-});
 
-// Exporta las acciones para ser usadas en otros archivos
-export const { setUsers, setCompleteUsers } = usersSlice.actions;
-
-// Exporta el slice completo para ser usado en la configuración del store
-export default usersSlice.reducer;
 
 // Exporta tipos derivados del store para ser utilizados en toda la aplicación
 
