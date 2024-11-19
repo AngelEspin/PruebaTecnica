@@ -4,13 +4,13 @@ import { TextField, Button, Box, Grid, Typography, CircularProgress } from '@mui
 import { exportToPDF, exportToExcel } from '../utils/exportData';
 import UserList from '../redux/components/UserList';
 import { useSelector, useDispatch } from 'react-redux'; // Redux para manejar estado global
-import { setUsers } from '../redux/features/usersSlice'; // Importa la acción para manejar los usuarios
+import { setUsers, setCompleteUsers} from '../redux/features/usersSlice'; // Importa la acción para manejar los usuarios
 import { RootState } from '../redux/store'; // Importa el estado raíz para tipado
 import { GetStaticProps } from 'next'; // Para obtener datos en el servidor
-import { User } from '../redux/components/types'; 
+import { User, UserComplete } from '../redux/components/types'; 
 
 // Componente principal de la página
-const Page = ({ initialUsers }: { initialUsers: User[] }) => {
+const Page = ({ initialUsers }: { initialUsers: UserComplete[] }) => {
   const dispatch = useDispatch();
 
   // Obtiene los usuarios del estado global
@@ -18,12 +18,12 @@ const Page = ({ initialUsers }: { initialUsers: User[] }) => {
 
   // Inicializa el estado local para la búsqueda y los usuarios filtrados
   const [search, setSearch] = useState('');
-  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+  const [filteredUsers, setFilteredUsers] = useState<UserComplete[]>([]);
   const [loading, setLoading] = useState(false);
 
   // Despacha los usuarios iniciales al estado global al cargar la página
   useEffect(() => {
-    dispatch(setUsers(initialUsers)); // Establece los usuarios iniciales en Redux
+    dispatch(setCompleteUsers(initialUsers)); // Establece los usuarios iniciales en Redux
   }, [initialUsers, dispatch]);
 
   // Filtra los usuarios en base al campo de búsqueda
