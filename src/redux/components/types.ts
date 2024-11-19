@@ -41,7 +41,7 @@ export interface UserComplete {
 export interface User {
   id: number;
   name: string;
-  username: string;  // Asegúrate de incluir estas propiedades
+  username: string;  // 
   email: string;
   phone: string;
   website: string;
